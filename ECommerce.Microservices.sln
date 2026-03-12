@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{DAD683A2-216A-487A-B878-FB401628DA34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Identity.API", "ECommerce.Identity.API\ECommerce.Identity.API.csproj", "{DD13A789-7CA6-4458-8787-178C71C149A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Identity.Application", "ECommerce.Identity.Application\ECommerce.Identity.Application.csproj", "{C67BC1D9-2D6E-447A-A56F-DA65CC372005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Identity.Domain", "ECommerce.Identity.Domain\ECommerce.Identity.Domain.csproj", "{2E811F9C-2C30-4EAB-AC94-4EC952643DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Identity.Infrastructure", "ECommerce.Identity.Infrastructure\ECommerce.Identity.Infrastructure.csproj", "{1D123837-B82C-4131-A07B-4877D545A318}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Querybkp", "Querybkp", "{C6961B9A-B9FC-406A-A35B-3BA5FC4F10D0}"
+	ProjectSection(SolutionItems) = preProject
+		EcommerceQueryfile.sql = EcommerceQueryfile.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Codebkp", "Codebkp", "{E770401F-B54F-4B2C-BAC1-BD6579D7383C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD13A789-7CA6-4458-8787-178C71C149A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD13A789-7CA6-4458-8787-178C71C149A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD13A789-7CA6-4458-8787-178C71C149A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD13A789-7CA6-4458-8787-178C71C149A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67BC1D9-2D6E-447A-A56F-DA65CC372005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67BC1D9-2D6E-447A-A56F-DA65CC372005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67BC1D9-2D6E-447A-A56F-DA65CC372005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67BC1D9-2D6E-447A-A56F-DA65CC372005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E811F9C-2C30-4EAB-AC94-4EC952643DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E811F9C-2C30-4EAB-AC94-4EC952643DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E811F9C-2C30-4EAB-AC94-4EC952643DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E811F9C-2C30-4EAB-AC94-4EC952643DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D123837-B82C-4131-A07B-4877D545A318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D123837-B82C-4131-A07B-4877D545A318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D123837-B82C-4131-A07B-4877D545A318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D123837-B82C-4131-A07B-4877D545A318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAD683A2-216A-487A-B878-FB401628DA34} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DD13A789-7CA6-4458-8787-178C71C149A0} = {DAD683A2-216A-487A-B878-FB401628DA34}
+		{C67BC1D9-2D6E-447A-A56F-DA65CC372005} = {DAD683A2-216A-487A-B878-FB401628DA34}
+		{2E811F9C-2C30-4EAB-AC94-4EC952643DA1} = {DAD683A2-216A-487A-B878-FB401628DA34}
+		{1D123837-B82C-4131-A07B-4877D545A318} = {DAD683A2-216A-487A-B878-FB401628DA34}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA5507C2-EBFF-4C48-B13C-2A9FECF25FFE}
+	EndGlobalSection
+EndGlobal
