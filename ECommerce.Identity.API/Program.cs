@@ -4,7 +4,6 @@ using ECommerce.Identity.Application.Common;
 using ECommerce.Identity.Infrastructure;
 using ECommerce.Identity.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -23,31 +22,6 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "ECommerce Identity API",
         Version = "v1"
-    });
-
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Enter: Bearer {your JWT token}"
-    });
-
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Id = "Bearer",
-                    Type = ReferenceType.SecurityScheme
-                }
-            },
-            new string[] {}
-        }
     });
 });
 
@@ -68,17 +42,11 @@ builder.Services.AddAuthentication(options =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
-
         ValidateAudience = true,
-
         ValidateLifetime = true,
-
         ValidateIssuerSigningKey = true,
-
         ValidIssuer = configuration["Jwt:Issuer"],
-
         ValidAudience = configuration["Jwt:Audience"],
-
         IssuerSigningKey = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(configuration["Jwt:Key"])
         )
@@ -92,7 +60,6 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-
     app.UseSwaggerUI();
 }
 
