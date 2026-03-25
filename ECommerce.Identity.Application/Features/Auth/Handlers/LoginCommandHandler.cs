@@ -44,7 +44,7 @@ namespace ECommerce.Identity.Application.Features.Auth.Handlers
                 throw new Exception("Invalid email or password");
 
             // 3️⃣ Generate JWT Token
-            var token = _jwt.GenerateToken(user);
+            var token = await _jwt.GenerateToken(user);
 
             // 4️⃣ Generate Refresh Token
             var refreshToken = _jwt.GenerateRefreshToken();

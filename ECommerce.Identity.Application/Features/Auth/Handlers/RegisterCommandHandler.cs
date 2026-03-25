@@ -43,7 +43,7 @@ namespace ECommerce.Identity.Application.Features.Auth.Handlers
                 throw new Exception("Registration failed");
 
             // 🔐 Generate JWT
-            var token = _jwt.GenerateToken(user);
+            var token = await _jwt.GenerateToken(user);
 
             // 🔄 Generate Refresh Token
             var refreshToken = _jwt.GenerateRefreshToken();

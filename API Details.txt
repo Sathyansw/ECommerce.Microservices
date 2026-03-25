@@ -1,0 +1,20 @@
+Cart :   "applicationUrl": "https://localhost:7075;http://localhost:5086",
+Catalog :  "applicationUrl": "https://localhost:7240;http://localhost:5238",
+Gateways :      "applicationUrl": "https://localhost:7000;http://localhost:5196",
+Identity :  "applicationUrl": "https://localhost:7227;http://localhost:5211",
+Order :  "applicationUrl": "https://localhost:7252;http://localhost:5179",
+Payment :  "applicationUrl": "https://localhost:7041;http://localhost:5263",
+
+https://localhost:7240/api/products
+https://localhost:7075/api/cart
+https://localhost:7252/api/orders
+
+https://localhost:7000/catalog/products
+
+https://localhost:7000/auth/login
+https://localhost:7000/auth/register
+
+npm create vite@latest ecommerce-frontend
+cd ecommerce-frontend
+npm install
+npm install axios react-router-dom

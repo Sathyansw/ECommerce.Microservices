@@ -6,28 +6,39 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ECommerce.Identity.Application.Interfaces;
 using ECommerce.Identity.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace ECommerce.Identity.Infrastructure.Services;
 
 public class JwtTokenGenerator : IJwtTokenGenerator
 {
     private readonly IConfiguration _configuration;
-
-    public JwtTokenGenerator(IConfiguration configuration)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public JwtTokenGenerator(
+    IConfiguration configuration,
+    UserManager<ApplicationUser> userManager)
     {
         _configuration = configuration;
+        _userManager = userManager;
     }
 
-    public string GenerateToken(ApplicationUser user)
+    public async Task<string> GenerateToken(ApplicationUser user)
     {
         if (user.Email is null || user.Id is null)
             throw new InvalidOperationException("User data is invalid.");
 
-        var claims = new[]
+        var roles = await _userManager.GetRolesAsync(user);
+
+        var claims = new List<Claim>
+    {
+        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        new Claim(ClaimTypes.NameIdentifier, user.Id)
+    };
+
+        foreach (var role in roles)
         {
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(ClaimTypes.NameIdentifier, user.Id)
-        };
+            claims.Add(new Claim(ClaimTypes.Role, role));
+        }
 
         var key = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));

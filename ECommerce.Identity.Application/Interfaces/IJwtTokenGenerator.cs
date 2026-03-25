@@ -9,7 +9,7 @@ namespace ECommerce.Identity.Application.Interfaces
 {
     public interface IJwtTokenGenerator
     {
-        string GenerateToken(ApplicationUser user);
+        Task<string> GenerateToken(ApplicationUser user);
         string GenerateRefreshToken();
     }
 }
